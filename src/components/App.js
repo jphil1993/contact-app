@@ -5,6 +5,7 @@ import './App.css';
 import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
+import ContactDetail from './ContactDetail';
 
 function App() {
     const LOCAL_STORAGE_KEY = "contacts";
@@ -22,10 +23,22 @@ function App() {
     };
 
     const ContactListWrapper = ({props}) => {
-        const navigate = useNavigate();
+        
 
         return(
             <ContactList
+                {...props} 
+                contacts={contacts} 
+                getContactId={removeContactHandler}
+            />
+        )
+    }
+
+    const ContactDetailWrapper = ({props}) => {
+        
+
+        return(
+            <ContactDetail
                 {...props} 
                 contacts={contacts} 
                 getContactId={removeContactHandler}
@@ -68,6 +81,12 @@ function App() {
                         exact 
                         element={
                             <ContactListWrapper/>
+                        }
+                    />
+                    <Route
+                        path='/contact/:id'
+                        element={
+                            <ContactDetailWrapper/>
                         }
                     />
                     
