@@ -4,10 +4,8 @@ import user from "../resources/user.png";
 
 
 const ContactDetail = (props) => {
-    console.log(props);
     const location = useLocation();
     const {contact} = location.state || {};
-    console.log(location.state);
     return(        
         <div className='main'>
             <div className='ui card centered'>
