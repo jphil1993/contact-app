@@ -17,7 +17,7 @@ const ContactCard = (props) => {
             </div>
             <i 
                 className='trash alternate outline icon' 
-                style={{color:"red", marginTop:"7px", marginLeft: "10px"}}
+                style={{color:"red", marginTop:"7px", marginLeft: "10px", float: "right"}}
                 onClick={() => props.clickHandler(id)}
             ></i>
             <Link 
@@ -26,7 +26,7 @@ const ContactCard = (props) => {
                 >
                 <i 
                     className='edit alternate outline icon' 
-                    style={{color:"red", marginTop:"7px"}}
+                    style={{color:"red", marginTop:"7px", float: "right"}}
                 ></i>
             </Link>
         </div>        
